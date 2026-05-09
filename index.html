@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DivSree Restaurant</title>
+
+    <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- bootsrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-------- header section starts -------->
+
+    <header class="header">
+        <div class="logo-box">
+            <img src="imgpr1/logo.png">
+            <h3 data-text="DivSree...">DivSree...</h3>
+        </div>
+
+        <nav class="navbar">
+            <a href="#home" title="Start Exploring">Home</a>
+            <a href="#menu" title="Explore Our Delicious Menu">Menu</a>
+
+            <a href="#view" title="Experience Luuxury & Comfort">In-View</a>
+            <a href="#feature" title="Why Choose Us?">Feature</a>
+            <a href="#revi" title="User Feedback">Review</a>
+            <a href="#footer" title="Who We Are">Footer</a>
+        </nav>
+
+        <div class="icons">
+            <div class="icon fas fa-bars" id="menu-btn" title="Open Menu"></div>
+            <div class="icon fas fa-search" id="search-btn" title="Search Here"></div>
+            <div class="icon" id="cart-btn" title="View Cart">
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="icon fas fa-user" id="user-btn" title="Login Now"></div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#view">In-View</a>
+            <a href="#feature">Feature</a>
+            <a href="#review">Review</a>
+        </div>
+
+        <form class="search-form" id="searchForm">
+            <input type="search" title="Find your favorite food" placeholder="Search food...">
+        </form>
+
+        <form class="login-form" id="loginForm">
+            <div class="log-top">
+
+                <h3>Login now</h3>
+                <button onclick="closePage()" class="logclose">✖</button>
+            </div>
+
+           <input type="email" id="email" class="box" placeholder="Enter Email">
+
+<input type="password" id="password" class="box" placeholder="Enter Password">
+
+            <p>forget your password <a href="#" onclick="openForgot()">click here</a></p>
+
+            <p>don't have an account
+                <a href="#" onclick="createAccount()">create now</a>
+            </p>
+            <div id="logbtn">
+                <a href="#" onclick="loginNow()" style="--clr:#6eff3e">
+                    <span>Login Now</span><i></i>
+                </a>
+            </div>
+        </form>
+
+
+        <form class="forgot-form" id="forgotForm">
+            <h1>Reset Password</h1>
+            <p>The password should have atleast 6 characters</p>
+            <h5>New password</h5>
+            <input type="password" placeholder="type here..." class="box">
+            <h5>Confirm password</h5>
+            <input type="password" placeholder="type here..." class="box">
+            <button type="button" onclick="closeForgot()">Submit</button>
+        </form>
+
+    </header>
+
+    <!-------- header section ends -------->
+
+
+    <!--------  home section starts -------->
+
+    <section class="home" id="home">
+
+        <div class="content" style="margin-bottom: 150px; margin-top: 150px;">
+            <h3>Best Food For <br><span>Your Taste</span></h3>
+            <p class="blockquote-footer text-center p-5">Hometown recipes wiith world-class flavor</p>
+            <!-- <a href="#" class="button">shop now</a> -->
+            <a href="#" onclick="showMessage()" id="homebtn" style="--clr:#6eff3e" class="clickbtn"><span>Read
+                    More...</span><i></i></a>
+        </div>
+
+    </section>
+
+    <!--------  home section ends -------->
+
+
+
+    <!-------- menu section starts ------->
+
+    <section id="menu">
+        <h1 class="heading">our <span> Menu</span></h1>
+
+        <div class="filter-btns">
+            <button class="active" onclick="filterMenu('all',this)">All</button>
+            <button onclick="filterMenu('Breakfast',this)" title="Morning Starts Here!..">Breakfast</button>
+            <button onclick="filterMenu('Lunch',this)" title="Pure Veg,Pure Energy!..">Veg</button>
+            <button onclick="filterMenu('Non-Veg',this)" title="Spicy Up Your Bite">Non-Veg</button>
+            <button onclick="filterMenu('ice',this)" title="Chill Your Mood!...">I-cream</button>
+            <button onclick="filterMenu('zone',this)" title="Sip the Freshness!...">Juicy</button>
+            <button onclick="filterMenu('best',this)">Best Bites</button>
+        </div>
+
+        <div class="container-fluid">
+            <div class="menu row justify-content-center">
+
+                <!-- Breakfast  -->
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Soft & Fluffy Aappam" data-category="Breakfast">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-aappam.png">
+                        <div class="menuname">
+                            <h3>Appam</h3> <br>
+                            <h3>70RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Appam')" class="button"
+                        title="Item added to cart !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Steamed Fresh & Healthy!..." data-category="Breakfast">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-puttu.png">
+                        <div class="menuname">
+                            <h3>Puttu</h3> <br>
+                            <h3>90RS--
+                            </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Puttu')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" data-category="Breakfast" title="Golden Roast With Masala Magic!...">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-masaladosa.png">
+                        <div class="menuname">
+                            <h3>masala Dosa</h3> <br>
+                            <h3>130RS--
+                            </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('masala Dosa')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" data-category="Breakfast" title="Best with Sambar & Chutney!...">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-idaly.png">
+                        <div class="menuname">
+                            <h3>Idali</h3> <br>
+                            <h3>90RS--
+                            </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Idali')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Rich in Ghee,Rich in Taste!..." data-category="Breakfast">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-gheedosa.png">
+                        <div class="menuname">
+                            <h3>Ghee Rost Dosa</h3> <br>
+                            <h3>150RS--
+                            </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Ghee Rost Dosa')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Crispy Outside,Soft Inside!..." data-category="Breakfast">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-vada.png">
+                        <div class="menuname">
+                            <h3>Medu Vada</h3> <br>
+                            <h3>60RS--
+                            </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Medu Vada')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Spicy Podi Power!..." data-category="Breakfast">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/brfast-podidosa.png">
+                        <div class="menuname">
+                            <h3>Podi Idli</h3> <br>
+                            <h3>110RS--
+                            </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Podi Idli')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <!-- Lunch  -->
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Cool,Calm & Comforting!..." data-category="Lunch">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/l-curd.png">
+                        <div class="menuname">
+                            <h3>Yogurt Rice</h3> <br>
+                            <h3>150RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Yogurt Rice')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Flavorful Tomato Delight!..." data-category="Lunch">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/l-tomato.png">
+                        <div class="menuname">
+                            <h3>Spiced Tomato Rice</h3> <br>
+                            <h3>170RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Spiced Tomato Rice')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Traditional Taste in Every Bite!..." data-category="Lunch">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/l-sambar.png">
+                        <div class="menuname">
+                            <h3>Sambar Rice</h3> <br>
+                            <h3>200RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Sambar Rice')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Veriety on One Plate!..." data-category="Lunch">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/l-meal.png">
+                        <div class="menuname">
+                            <h3>Veg Thali</h3> <br>
+                            <h3>2500RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Veg Thali')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Aromatic Jeera Delight!..." data-category="Lunch">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/l-jeera.png">
+                        <div class="menuname">
+                            <h3>Cumin Rice</h3> <br>
+                            <h3>130RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Cumin Rice')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <!-- non-veg  -->
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="The King of Biryani!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-chicken.png">
+                        <div class="menuname">
+                            <h3>Dum Chicken Biryani</h3> <br>
+                            <h3>400RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Dum Chicken Biryani')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="A Fiery Chiness Classic!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-chilli.png">
+                        <div class="menuname">
+                            <h3>Kung Pao Chicken</h3> <br>
+                            <h3>490RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Kung Pao Chicken')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Spice Loaded,Egg Powered!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-egg.png">
+                        <div class="menuname">
+                            <h3>Spicy Anda Biryani</h3> <br>
+                            <h3>380RS-- </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Spicy Anda Biryani')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Bold Flavor,Fll Power!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-mutcravy.png">
+                        <div class="menuname">
+                            <h3>Tawa Kaleji</h3> <br>
+                            <h3>430RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Tawa Kaleji')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Taste of Kerala Coast!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-fishfry.png">
+                        <div class="menuname">
+                            <h3>Malabar Fish Fry</h3> <br>
+                            <h3>550RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Malabar Fish Fry')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Smoky,Spicy!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-muttonlefe.png">
+                        <div class="menuname">
+                            <h3>Korean BBQ</h3> <br>
+                            <h3>600RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Korean BBQ')" class="button"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Golen Twist on ClassicRoast!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-dhanthurifull.png">
+                        <div class="menuname">
+                            <h3>Lemon Kissed Roast Chicken</h3> <br>
+                            <h3>650RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Lemon Kissed Roast Chicken')"
+                        class="button" title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Crispy Skin,Juicy Inside!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-beef.png">
+                        <div class="menuname">
+                            <h3>Caramel Honey Duck</h3> <br>
+                            <h3>560RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Caramel Honey Duck')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Powerful Smoky Taste!..." data-category="Non-Veg">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img/non-veg.png">
+                        <div class="menuname">
+                            <h3>Smoky Grill Steak</h3> <br>
+                            <h3>590RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Smoky Grill Steak')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <!-- ice  -->
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Jamun Twist in Every Lick!..." data-category="ice">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/ice-blue.png">
+                        <div class="menuname">
+                            <h3>Jamun Milk Pops</h3> <br>
+                            <h3>220RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Jamun Milk Pops')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Power-Packed Superfood Bowl!..." data-category="ice">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/ice-chacolate.png">
+                        <div class="menuname">
+                            <h3>Shia Yogurt Pudding</h3> <br>
+                            <h3>300RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Shia Yogurt Pudding')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Vlevety Smooth,Pineapple Fresh!..." data-category="ice">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/ice-pinapple.png">
+                        <div class="menuname">
+                            <h3>Pine Velvet Cream</h3> <br>
+                            <h3>280RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Pine Velvet Cream')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Berry Sweet,Choco Smooth!..." data-category="ice">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/ice-glass.png">
+                        <div class="menuname">
+                            <h3>Berry Choco Mousse</h3> <br>
+                            <h3>230RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Berry Choco Mousse')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Royal Nutty Delight!..." data-category="ice">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/ice-pistha.png">
+                        <div class="menuname">
+                            <h3>Pistachio Royale</h3> <br>
+                            <h3>200RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Pistachio Royale')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Pretty in Pink,Perfectly Sweet" data-category="ice">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/ice-strawberry.png">
+                        <div class="menuname">
+                            <h3>Pink Swirl</h3> <br>
+                            <h3>210RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Pink Swirl')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Citrus Zing with Berry Bliss!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/juice-blueberry.png">
+                        <div class="menuname">
+                            <h3>Blk-berry Thyme Lemonade</h3> <br>
+                            <h3>140RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Blk-berry Thyme Lemonade')"
+                        class="button" title="Item added to cart  !🛍️"><span>Add to
+                            Cart</span><i></i></button>
+                </div>
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Cool Berry Mint Magic!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/juice-bluelemon.png">
+                        <div class="menuname">
+                            <h3>Mojito berry </h3> <br>
+                            <h3>120RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Mojito berry')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Sparking Cherry Splash!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/juice-cherry.png">
+                        <div class="menuname">
+                            <h3>Cherry Mojito</h3> <br>
+                            <h3>190RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Cherry Mojito')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Minty Fresh & Super Cool!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/juice-ice.png">
+                        <div class="menuname">
+                            <h3>Mint</h3> <br>
+                            <h3>160RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Mint')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Sweet Strawberry with a Zesty Kick!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/juice-strawberry.png">
+                        <div class="menuname">
+                            <h3>Strawberry Margarita</h3> <br>
+                            <h3>200RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Strawberry Margarita')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Royal Taste of the Tropics!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/refresh-cocanut.png">
+                        <div class="menuname">
+                            <h3>Coco Royale</h3> <br>
+                            <h3>115RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Coco Royale')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Tangy,Tropical & Refreshing!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/refresh-ice.png">
+                        <div class="menuname">
+                            <h3>Passionfruit Juice</h3> <br>
+                            <h3>200RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Passionfruit Juice')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Chill with Rosy Magic!..." data-category="zone">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/refresh-straw.png">
+                        <div class="menuname">
+                            <h3>Rosy Juicy</h3> <br>
+                            <h3>190RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Rosy Juicy')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Juice Chicken,Melty Cheese!..." data-category="best">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu1.png">
+                        <div class="menuname">
+                            <h3>Cheesy Chicken Roll</h3> <br>
+                            <h3>450RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Guacamole')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Earthy Beets,Zesty Citrus!..." data-category="best">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu2.png">
+                        <div class="menuname">
+                            <h3>Roasted Beet and Citrus Salad</h3> <br>
+                            <h3>500RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('CreamyStuffed Chicken')"
+                        class="button" title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="A Perfect Sweet Start!..." data-category="best">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu6.png">
+                        <div class="menuname">
+                            <h3>Ber-Honi Pancake</h3> <br>
+                            <h3>430RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Ber-Honi Pancake')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Sweet Mango,Nutty Crunch!..." data-category="best">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu7.png">
+                        <div class="menuname">
+                            <h3>Peanut Mango Crunch</h3> <br>
+                            <h3>520RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Peanut Mango Crunch')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" data-category="best" title="Sweet Glaze,Sacory Surprise!...">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu8.png">
+                        <div class="menuname">
+                            <h3>Glazed Stuffed Onions</h3> <br>
+                            <h3>490RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Glazed Stuffed Onions')"
+                        class="button" title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Silky Smooth Italian Delight!..." data-category="best">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu10.png">
+                        <div class="menuname">
+                            <h3>Panna Cotta</h3> <br>
+                            <h3>580RS--</h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Panna Cotta')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+                <div class="card col-lg-3 col-md-4 col-sm-6 col-1" title="Creamy & Zesty!..." data-category="best">
+                    <div class="menuitem" style="display: flex; align-items: center; justify-content: space-between;">
+                        <img src="menu_img1/menu11.png">
+                        <div class="menuname">
+                            <h3>Guacamole</h3> <br>
+                            <h3>540RS-- </h3>
+                        </div>
+                    </div>
+                    <button id="allbtn" style="--clr:#6eff3e" onclick="addToCart('Guacamole')" class="button"
+                        title="Item added to cart  !🛍️"><span>Add
+                            to
+                            Cart</span><i></i></button>
+                </div>
+
+            </div>
+            <!-- menu section ents  -->
+
+            <!-- CART -->
+            <div class="cart-panel" id="cartPanel">
+                <div class="cart-header">
+                    <h3>My Cart</h3>
+                    <span onclick="cartPanel.classList.remove('active')" id="cancel">✖</span>
+                </div>
+                <div class="cart-items" id="cartItems">
+
+                </div>
+                <div class="cart-footer">
+
+                    <p>Total : ₹<span id="total">0</span></p>
+
+                    <button onclick="buyNow()">Buy Now</button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!------- menu section ends ------->
+
+
+
+
+    <!------- view section starts ------->
+
+    <section id="view">
+
+        <h1 class="heading"> Inside <span>View</span></h1>
+
+        <div class="saii">
+            <div class="slider">
+
+                <div class="slides" style="--img: url('imgpr1/rst-dining.png')">
+                    <div class="saicontent">
+                        <h2>1 Eligant Dining...</h2>
+                        <p>Comfort meets flavour in our elegent dining area.Sit back,relex every bits...</p>
+                    </div>
+                </div>
+
+                <div class="slides" style="--img: url('imgpr1/rst-juice.png')">
+                    <div class="saicontent">
+                        <h2>2 Sip of Freshness</h2>
+                        <p>Cool down with every sip, taste the natural freshness.</p>
+                    </div>
+                </div>
+
+                <div class="slides" style="--img: url('imgpr1/rst-coffee.png')">
+                    <div class="saicontent">
+                        <h2>3 Cup of Calm</h2>
+                        <p>Where every cup tells a story.Fresh brews,calm vibes,perfect moments...</p>
+                    </div>
+                </div>
+
+                <div class="slides" style="--img: url('imgpr1/rst-fam.png')">
+                    <div class="saicontent">
+                        <h2>4 Together Table</h2>
+                        <p>More then a table,it's a place for togetherness.Sharing food,sharing happiness...</p>
+                    </div>
+                </div>
+
+                <div class="slides" style="--img: url('imgpr1/rst-Juicearea.png')">
+                    <div class="saicontent">
+                        <h2>5 Sip & Swirl or Blend Spot</h2>
+                        <p>Where cool ambiance meets fresh flavors.The perfect spot to chill with your favorite
+                            juice..
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slides" style="--img: url('imgpr1/rst-wasing.png')">
+                    <div class="saicontent">
+                        <h2>6 Washing</h2>
+                        <p>Refresh,rinse,and return with comfort.Because cleanliness adds to every good meal...</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+        </div>
+
+    </section>
+
+    <!------- menu section ends ------->
+
+
+
+    <!------- feature section starts ------->
+
+    <section class="feature" id="feature"
+        style="background: url(imgpr1/home2.png); background-position: center; background-size: cover; background-color: rgba(242, 219, 13, 0.18); ">
+
+        <h1 class="heading " style="padding-top: 0;"> our <span>features</span></h1>
+
+        <div class="row box-container">
+
+            <div class="box col-lg-12">
+                <img src="imgpr1/feature-organic.png" alt="">
+                <h3>fresh and organic</h3>
+                <p>Our restaurent uses only fresh and organic ingredients to prepare every dish.</p>
+                <a href="#" id="homebtn" title="click heare and get more details" style="--clr:#6eff3e" class="clickbtn"
+                    data-bs-toggle="collapse" data-bs-target="#dd"
+                    onclick="openPopup('Divsree Restaurant offers fresh and organic food made with love and care.We use high-quality natural ingredients sourced daily.Experience the true flavor of freshness at DivSree.')"><span>Read
+                        More...</span><i></i></a>
+            </div>
+
+            <div class="box ">
+                <img src="imgpr1/feature-delivery.png" alt="">
+                <h3>free delivery</h3>
+                <p>Order from us and save more on every purchesNo delivery fee.</p>
+                <a href="#" id="homebtn" title="click heare and get more details" style="--clr:#6eff3e" class="clickbtn"
+                    data-bs-toggle="collapse" data-bs-target="#dd"
+                    onclick="openPopup('Too lazy to step out? Do not worry! DivSree brings fresh and organic food straight to your door-absolutely free delivary!..')"><span>Read
+                        More...</span><i></i></a>
+            </div>
+
+            <div class="box col-12 col-lg-3">
+                <img src="imgpr1/feature-money.png" alt="">
+                <h3>easy payments</h3>
+                <p>Payment made easy for you.No complication, no trouble,Quick and comfortable!</p>
+                <a href="#" id="homebtn" data-bs-toggle="collapse" data-bs-target="#dd" style="--clr:#6eff3e"
+                    class="clickbtn"
+                    onclick="openPopup('Enjoy easy and secure payment options at DivSree Restaurant.Pay online or on delivery-Quick,safe,and hossle-free')"><span>Read
+                        More...</span><i></i></a>
+            </div>
+
+            <div id="popupBox" class="popup">
+                <div class="popup-content">
+                    <p id="popupMessage"></p>
+                    <br>
+                    <button class="popupbtn" onclick="closePopup()">Close</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!------- feature section ends ------->
+
+
+
+
+    <!------- reviews section starts ------->
+
+    <section class="revback" id="revi">
+
+        <h1 class="heading"> Customer <span>Review</span></h1>
+
+        <div class="shade">
+
+            <div class="slider-container" id="review">
+
+                <div class="slider-rev">
+
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <img src="imgpr1/review-1g.png">
+                        <div class="glow"></div>
+                        <div class="overlay">
+                            <div class="name">Ishika</div>
+                            <div class="stars" style="color: var(--orange); font-size: 1.1rem;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-text">
+                                Amazing experience and great support.
+                                Loved the quality and service.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="imgpr1/review-4b.png">
+                        <div class="glow"></div>
+                        <div class="overlay">
+                            <div class="name">Aadhvik</div>
+                            <div class="stars" style="color: var(--orange); font-size: 1.1rem;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-text">
+                                Very professional and friendly.
+                                Highly recommended place.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="imgpr1/review-2g.png">
+                        <div class="glow"></div>
+                        <div class="overlay">
+                            <div class="name">Tanvika</div>
+                            <div class="stars" style="color: var(--orange); font-size: 1.1rem;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-text">
+                                Excellent ambience and taste.
+                                Will visit again for sure!
+                                Fast delivery and good response.
+                                Totally satisfied service.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <img src="imgpr1/review-5b.png">
+                        <div class="glow"></div>
+                        <div class="overlay">
+                            <div class="name">Harshith</div>
+                            <div class="stars" style="color: var(--orange); font-size: 1.1rem;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-text">
+                                The food was good,the ambience is nice,but it can get crowded during peak hours.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <img src="imgpr1/review-6b.png">
+                        <div class="glow"></div>
+                        <div class="overlay">
+                            <div class="name">Nirvaan</div>
+                            <div class="stars" style="color: var(--orange); font-size: 1.1rem;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-text">
+                                Premium quality and clean environment.
+                                Five star experience!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="slide ">
+                        <img src="imgpr1/review-3g.png">
+                        <div class="glow"></div>
+                        <div class="overlay">
+                            <div class="name">Ishika</div>
+                            <div class="stars" style="color: var(--orange); font-size: 1.1rem;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-text">
+                                The food was delicious and fresh,tha tast was decent but the price felt a little
+                                high.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!------ reviews section ends ------->
+
+
+
+
+    <!------- Footer Start ------->
+
+    <footer class="footer" id="footer">
+
+        <div class="footer-container ">
+
+            <!-- Follow Us -->
+            <div class="footer-box ">
+                <h3>DivSree Restaurant</h3>
+                <p>Delicious food with great ambience. Visit us and enjoy your time with family.</p>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f" title="Feasbook"></i></a>
+                    <a href="#"><i class="fab fa-instagram" title="Instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter" title="Twitter"></i></a>
+                    <a href=""><i class="fab fa-google-plus-g" title="Google-plus"></i></a>
+                </div>
+            </div>
+
+            <!--  Opening Hours -->
+            <div class="footer-box">
+                <h3>Opening Hours</h3>
+                <div class="hours-image">
+                    <img src="imgpr1/footertimming.png" class="img-fluid" alt="restaurant">
+                </div>
+                <div class="hours-list">
+                    <p>Only available this timmings</p>
+                </div>
+            </div>
+
+            <!--  Location -->
+            <div class="footer-box">
+                <h3>Location</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63099.9527516395!2d77.68768934863282!3d8.715553500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b040dddd7d5766f%3A0x97f9ebd61eb95a42!2sVairamaligai%20Rooftop%20Restaurant!5e0!3m2!1sen!2sin!4v1770953214072!5m2!1sen!2sin"
+                    width="90%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p>📍 123, Gandhipuram, Coimbatore | 📞 +91 98765 43210</p>
+            </div>
+
+            <!--  Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="#home">→ Home</a>
+                <a href="#menu">→ Menu</a>
+                <a href="#in-view">→ In-view</a>
+                <a href="#feature">→ Feature</a>
+                <a href="#review">→ Review</a>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            @ 2026 DivSree Restaurant | All Rights Reserved
+        </div>
+
+    </footer>
+
+    <!------- Footer End ------->
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
